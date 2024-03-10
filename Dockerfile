@@ -1,13 +1,8 @@
 FROM tomcat:10.1.18
 
-FROM openjdk:11
-
-
-COPY src /src/
-
-COPY *.war target/*
-RUN rm -rf /usr/local/tomcat/webapps/*
+COPY src /usr/local/tomcat/webapps/ROOT/
+COPY target/*.war /usr/local/tomcat/webapps/
 
 EXPOSE 8080
 
-CMD ["catalina.sh","run"]
+CMD ["catalina.sh", "run"]
