@@ -1,8 +1,12 @@
 FROM tomcat:10.1.18
 
-RUN rm -rf /usr/local/tomcat/webapps/*
+FROM openjdk:11
 
-COPY *.war /usr/local/tomcat/webapps
+
+COPY src /src/
+
+COPY *.war target/*
+
 
 EXPOSE 8080
 
