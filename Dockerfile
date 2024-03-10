@@ -1,7 +1,7 @@
 FROM tomcat:10.1.18
 
 COPY src /usr/local/tomcat/webapps/ROOT/
-COPY target/*.war /usr/local/tomcat/webapps/
+COPY /target/*.war
 
 EXPOSE 8080
 
